@@ -1,5 +1,5 @@
-# ZT-MCP: Zero-Trust Security Architecture for MCP-Connected AI Agents 🛡️
-### Reference Implementation for IEEE COINS 2026
+# ZT-MCP: Zero-Trust Security Architecture for MCP-Connected AI Agents
+### Reference Implementation
 
 This repository contains the reference implementation of **ZT-MCP**, a zero-trust enforcement middleware designed specifically for the Model Context Protocol (MCP) ecosystem.
 
