@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  opa:
+    image: openpolicyagent/opa:latest
+    ports:
+      - "8181:8181"
+    command: run --server --addr :8181 /policies
+    volumes:
+      - ./ape/policies:/policies
+
+  pal_db:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_DB: ztmcp_audit
+      POSTGRES_USER: ztmcp_admin
+      POSTGRES_PASSWORD: secure_dev_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pal_data:/var/lib/postgresql/data
+      - ./scripts/init_pal_db.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pal_data:
