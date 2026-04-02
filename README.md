@@ -1,4 +1,4 @@
-# ZT-MCP: Zero-Trust Security Architecture for MCP-Connected AI Agents 🛡️
+# ZT-MCP: Zero-Trust Security Architecture for MCP-Connected AI Agents
 
 **Reference Implementation for IEEE COINS 2026**
 
