@@ -1,13 +1,14 @@
 # ZT-MCP: Zero-Trust Security Architecture for MCP-Connected AI Agents
 ### Reference Implementation
 
-This repository contains the reference implementation of **ZT-MCP**, a zero-trust enforcement middleware designed specifically for the Model Context Protocol (MCP) ecosystem.
+ZT-MCP is a zero-trust enforcement middleware designed for the Model Context Protocol (MCP) ecosystem. It operates below the agent reasoning layer to provide protocol-level, mathematically auditable security controls.
 
-It provides mathematically auditable, protocol-level access control to prevent:
-- Tool spoofing
-- Unauthorized invocation
-- Prompt injection
-- Data exfiltration
+## 🔐 Key Capabilities
+- Prevents tool spoofing
+- Blocks unauthorized invocation
+- Mitigates prompt injection attacks
+- Protects against data exfiltration
+- Ensures verifiable and auditable policy enforcement
 
 ---
 
@@ -26,27 +27,28 @@ If you use ZT-MCP or the formal CapBAC model in your research, please cite:
 
 ---
 
-## 📁 Repository Structure
+## 🏗️ Architecture Overview
 
-The framework is implemented as four decoupled microservices operating below the agent reasoning layer:
+ZT-MCP is composed of four decoupled microservices:
 
-- `tiv/` – Tool Identity Verifier (Cryptographic certificate & CRL checks)
-- `ape/` – Access Policy Engine (OPA CapBAC and ABAC rule evaluation)
-- `dcof/` – Data Classification and Output Filter (PII detection & injection sanitization)
-- `pal/` – Protocol Audit Logger (Tamper-evident HMAC-SHA256 hash chain)
+| Component | Description |
+|----------|------------|
+| tiv/ | Tool Identity Verifier (certificate validation & CRL checks) |
+| ape/ | Access Policy Engine (OPA-based CapBAC & ABAC evaluation) |
+| dcof/ | Data Classification & Output Filter (PII detection & injection sanitization) |
+| pal/ | Protocol Audit Logger (tamper-evident HMAC-SHA256 hash chain) |
 
 ---
 
-## 🚀 Quick Start & Setup
+## 🚀 Quick Start
 
-### Prerequisites
-
+### ✅ Prerequisites
 - Docker & Docker Compose
 - Python 3.9+
 
 ---
 
-### Step 1: Environment Configuration
+### 1️⃣ Clone & Configure
 
 ```bash
 git clone https://github.com/sarmishra/ZT-MCP-Project.git
@@ -56,47 +58,48 @@ cp .env.example .env
 
 ---
 
-### Step 2: Start the ZT-MCP Infrastructure
+### 2️⃣ Start Infrastructure
 
-ZT-MCP relies on:
+ZT-MCP depends on:
 - Open Policy Agent (OPA)
-- PostgreSQL (for audit logs)
+- PostgreSQL (audit logging)
 
 ```bash
 docker-compose up -d
 ```
 
-Note: PostgreSQL auto-initializes schema using:
-`scripts/init_pal_db.sql`
+Note: Database schema auto-initializes via:
+scripts/init_pal_db.sql
 
 ---
 
-### Step 3: Install Dependencies
+### 3️⃣ Install Dependencies
 
 ```bash
 python -m venv venv
 
-# Activate
+# Activate environment
 source venv/bin/activate     # macOS/Linux
-venv\Scripts\activate      # Windows
+venv\Scripts\activate        # Windows
 
 pip install -r requirements.txt
 ```
 
 ---
 
-## 🧪 Reproducing the Empirical Evaluation (Table V)
+## 🧪 Reproducing Empirical Evaluation (Table V)
 
-Includes evaluation suite for N=35 experiments.
+This repository includes the full evaluation suite used in the paper (N = 35 experiments).
 
-### Attack Categories
-
+### ⚠️ Attack Scenarios Tested
 - Tool spoofing
 - Unauthorized network egress (smtp_send)
 - Indirect prompt injection
 - Privilege escalation
 
-### Run Evaluation
+---
+
+### ▶️ Run Evaluation
 
 ```bash
 python evaluation/run_evaluation.py
@@ -104,23 +107,39 @@ python evaluation/run_evaluation.py
 
 ---
 
-## 📊 Metrics
+## 📊 Evaluation Metrics
 
-- ACP (>95%)
-- PEL (<100ms)
-- TAC (100%)
-- ABR (primary safety metric)
-- FPR (<2%)
+| Metric | Description | Target |
+|--------|------------|--------|
+| ACP | Access Control Precision | > 95% |
+| PEL | Policy Enforcement Latency | < 100 ms |
+| TAC | Tool Audit Coverage | 100% |
+| ABR | Attack Block Rate (primary safety metric) | High |
+| FPR | False Positive Rate | < 2% |
 
 ---
 
 ## 📁 Output
 
-Results saved to:
-`evaluation/evaluation_results.json`
+Evaluation results are stored in:
+evaluation/evaluation_results.json
 
 ---
 
 ## 📜 License
 
-MIT License (see LICENSE file)
+This project is licensed under the MIT License.
+See the LICENSE file for details.
+
+---
+
+## 🤝 Contribution
+
+Contributions, issues, and feature requests are welcome.
+Feel free to fork the repo and submit a pull request.
+
+---
+
+## ⭐ Acknowledgment
+
+If you find this work useful, consider giving the repository a star.
