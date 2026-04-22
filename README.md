@@ -21,10 +21,8 @@ If you use ZT-MCP or the formal CapBAC model in your research, please cite:
   author    = {Mishra, Saroj},
   title     = {ZT-MCP: A Zero-Trust Security Architecture for 
                MCP-Connected AI Agents,
-  booktitle = {IEEE International Conference on Omni-Layer 
-               Intelligent Systems (COINS)},
+  booktitle = {},
   year      = {2026},
-  note      = {Track 7: Secure, Reliable, and Trustworthy AI Systems}
 }
 ```
 
