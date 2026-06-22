@@ -159,7 +159,7 @@ python evaluation/run_evaluation.py
 | ZT-MCP — Strict Mode | 100.0 ± 0.0 | 47.8 ± 3.8 | 100.0 ± 0.0 | 100.0 ± 0.0 | 0.0 ± 0.0 |
 | ZT-MCP — Adaptive Mode | 100.0 ± 0.0 | 39.5 ± 3.1 | 100.0 ± 0.0 | 100.0 ± 0.0 | 0.0 ± 0.0 |
 
-Pipeline: `financial_db_query` → `report_generator` → compliance report  
+Pipeline: `data_query` → `report_generator` → compliance report  
 Attacks tested: tool spoofing, smtp exfiltration, prompt injection, privilege escalation  
 PEL includes simulated MCP network round-trip overhead (15–38ms TCP base).
 
