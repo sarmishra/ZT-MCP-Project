@@ -9,10 +9,10 @@ class ToolIdentityVerifier:
         self.strict_mode = strict_mode
         # Simulated Certificate Registry and Revocation List (CRL)
         self.authorized_tools = {
-            "financial_db_query": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "data_query": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
             "report_generator": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
         }
-        self.revoked_tools = ["financial_db_query_v2", "smtp_send_unverified"]
+        self.revoked_tools = ["data_query_v2", "smtp_send_unverified"]
 
     def verify_tool(self, tool_name: str, provided_manifest_hash: str) -> bool:
         """Verifies tool identity against the trusted registry and CRL."""
