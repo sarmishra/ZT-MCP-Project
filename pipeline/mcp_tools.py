@@ -4,7 +4,7 @@ class SimulatedMCPTools:
     """Simulates external MCP tools and adversarial data payloads."""
     
     @staticmethod
-    def financial_db_query(query: str, simulate_attack: bool = False) -> str:
+    def data_query(query: str, simulate_attack: bool = False) -> str:
         """Legitimate read-only tool, optionally returning a prompt injection."""
         if simulate_attack:
             # Case Study 1: Indirect Prompt Injection Payload
