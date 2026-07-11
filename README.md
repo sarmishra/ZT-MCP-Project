@@ -1,7 +1,7 @@
 # ZT-MCP: A Zero-Trust Security Architecture for MCP-Connected AI Agents
 ### Reference Implementation
 
-ZT-MCP is a zero-trust enforcement middleware designed for the Model Context Protocol (MCP) ecosystem. It operates below the agent reasoning layer to provide protocol-level, mathematically auditable security controls.
+ZT-MCP is a zero-trust enforcement middleware designed for the Model Context Protocol (MCP) ecosystem. It operates below the agent reasoning layer to provide protocol-level, deterministic, and tamper-evidently auditable security controls.
 
 ## 🔐 Key Capabilities
 - Prevents tool spoofing
@@ -19,10 +19,10 @@ If you use ZT-MCP or the formal CapBAC model in your research, please cite:
 ```bibtex
 @inproceedings{mishra2026ztmcp,
   author    = {Mishra, Saroj},
-  title     = {ZT-MCP: A Zero-Trust Security Architecture for 
-               MCP-Connected AI Agents,
-  booktitle = {},
+  title     = {{ZT-MCP}: A Zero-Trust Security Architecture for {MCP}-Connected {AI} Agents},
+  booktitle = {Proc. IEEE Int. Conf. on Omni-Layer Intelligent Systems (COINS)},
   year      = {2026},
+  note      = {to appear}
 }
 ```
 
@@ -123,7 +123,7 @@ Set via environment variable `ZTMCP_MODE` in `.env`:
 
 | Mode | Behavior | Use Case |
 | --- | --- | --- |
-| `strict` | All invocations require capability token + full APE approval. No exceptions. | Regulated financial/healthcare environments |
+| `strict` | All invocations require capability token + full APE approval. No exceptions. | Regulated enterprise and compliance-driven environments |
 | `adaptive` (default) | Policy strictness scales with data sensitivity and tool risk score | General enterprise deployment — **recommended** |
 | `audit-only` | Logs all interactions without blocking. Violations flagged for review. | Initial deployment / baseline calibration |
 
