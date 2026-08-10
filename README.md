@@ -22,7 +22,7 @@ If you use ZT-MCP or the formal CapBAC model in your research, please cite:
   title     = {{ZT-MCP}: A Zero-Trust Security Architecture for {MCP}-Connected {AI} Agents},
   booktitle = {Proc. IEEE Int. Conf. on Omni-Layer Intelligent Systems (COINS)},
   year      = {2026},
-  note      = {to appear}
+  note      = {Accepted for presentation at IEEE COINS 2026; proceedings forthcoming}
 }
 ```
 
